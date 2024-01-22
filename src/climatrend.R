@@ -50,10 +50,10 @@
 #' @author Cees de Valk \email{cees.de.valk@knmi.nl}
 #'
 #' @export
-climatrend <- function(t, y, p, t1, t2, ybounds, drawplot, draw30)
+climatrend <- function(t, y, p, t1, t2, width, ybounds, drawplot, draw30)
 {
   # fixed parameters
-  width <- 42
+  width <- width
   control <- loess.control(surface = "direct", statistics= "exact",
                            iterations= 1)
   # check input

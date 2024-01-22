@@ -4,7 +4,7 @@ source("src/climatrend.R")
 set.seed(10)
 
 data_df <- data.frame(values = rnorm(100, mean = 15, sd = 1) + c(1:100)/50, years = 1901:2000)
-climate_trend_out <- climatrend(t = data_df$years, y = data_df$values)
+climate_trend_out <- climatrend(t = data_df$years, y = data_df$values, width = 42)
 
 data_df$CCM_trend <- climate_trend_out$trend
 data_df$CCM <- mean(data_df[data_df$years > 1981 & data_df$years < 2010, ]$values)

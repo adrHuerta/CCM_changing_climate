@@ -2,7 +2,7 @@ rm(list = ls())
 source("src/climatrend.R")
 
 data_df <- read.csv(file.path(getwd(), "data", "PISCOt_Tmean_value.csv"), header = TRUE)[, -1]
-climate_trend_out <- climatrend(t = data_df$years, y = data_df$values)
+climate_trend_out <- climatrend(t = data_df$years, y = data_df$values, width = 30)
 
 data_df$CCM_trend <- climate_trend_out$trend
 data_df$CCM <- mean(data_df[data_df$years > 1991 & data_df$years < 2020, ]$values)
